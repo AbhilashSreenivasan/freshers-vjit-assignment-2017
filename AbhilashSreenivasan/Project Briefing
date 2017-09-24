@@ -1,0 +1,31 @@
+Hello Sir / Ma'am, This is Abhilash Sreenivasan from VJIT and here is the briefing of my assignment titled
+Restaurant Management System :
+
+1. My Java project for the Restaurant Manager would begin with an application window displaying two 
+    buttons initially titled "Dine in" and "Home Delivery". The  selection of "Dine in" would open up
+    another application window displaying two buttons titled "La Carte" and "Buffet". 
+2. Upon choosing the option of "La carte", another application window is displayed representing the 
+    "Allotment of Table" to the customers.
+3. The next application window portion consists of the menu in 3 divisions as :Starters, Main Course and Desserts. 
+   For ease, I would be mentioning 5 items of each with their respective prices and a text box where the quantity
+    of each repsective items can be made to count.
+4. A drop-down or a combo box is displayed for the selection of Drinks of Choice and the quantity
+    required.
+5. A seperator is used beneath which a Panel is displayed labelled "Executive Chef" which contains 
+    the list of the items as ordered by the customer which is used for the preparation as required.
+6. There are four buttons named "Total", "Reset", " Receipt","Print". When clicked on Total, the total price
+    automatically including the taxes are displayed.
+7.  The print button functions for printing the receipt which is also accompanied by the displaying of
+     another application window as the "Customer Feedback" 
+8. The total amount paid by the customer as per the bill is maintained in a database for further 
+    checks.
+9. The application windows are similar for "Buffet" and "Home Delivery" without an option for Assignment
+    to waiter. The buffet application window would consist of two options being "Vegetarian Buffet" and
+    "Non vegetarian buffet". Any specific add-ons not included in the buffet are also considered as a 
+    drop - down box, the amount of which is added to the buffet price including the taxes.
+10. The home delivery option would consist of a field to assign a delivery executive and the address can be 
+      stored in another text field.
+
+
+With regards,
+Abhilash Sreenivasan.
