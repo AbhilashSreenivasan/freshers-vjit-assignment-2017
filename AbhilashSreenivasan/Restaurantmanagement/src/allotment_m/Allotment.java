@@ -11,6 +11,7 @@ import java.awt.Font;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.JLabel;
 
 public class Allotment {
 
@@ -131,9 +132,11 @@ public class Allotment {
 		});
 		jbtnTable8.setBounds(667, 298, 134, 42);
 		frame.getContentPane().add(jbtnTable8);
+		
+		JLabel label = new JLabel("");
+		label.setBounds(321, 46, 46, 14);
+		frame.getContentPane().add(label);
 	
 		
 	}
-	
-		
 }

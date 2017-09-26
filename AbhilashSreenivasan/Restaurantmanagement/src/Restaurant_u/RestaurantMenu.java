@@ -15,6 +15,7 @@ import javax.swing.JTextField;
 import javax.swing.JTabbedPane;
 import javax.swing.JSeparator;
 import javax.swing.JComboBox;
+import javax.swing.JEditorPane;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -39,8 +40,9 @@ public class RestaurantMenu {
 	private JTextField jtxtLassi;
 	private JTextField jtxtRasgulla;
 	private JTextField textField_16;
-	private JTextField textField_17;
 	private JTextField jtxtTotal;
+	private JTextField jtxtDrink;
+	private JTextField jtxtReceipt;
 
 	/**
 	 * Launch the application.
@@ -122,26 +124,31 @@ public class RestaurantMenu {
 		panel.add(lblQty);
 		
 		jtxtChickenWings = new JTextField();
+		jtxtChickenWings.setText("0");
 		jtxtChickenWings.setBounds(143, 33, 86, 20);
 		panel.add(jtxtChickenWings);
 		jtxtChickenWings.setColumns(10);
 		
 		jtxtChickenKebabs = new JTextField();
+		jtxtChickenKebabs.setText("0");
 		jtxtChickenKebabs.setColumns(10);
 		jtxtChickenKebabs.setBounds(143, 58, 86, 20);
 		panel.add(jtxtChickenKebabs);
 		
 		jtxtPasta = new JTextField();
+		jtxtPasta.setText("0");
 		jtxtPasta.setColumns(10);
 		jtxtPasta.setBounds(143, 83, 86, 20);
 		panel.add(jtxtPasta);
 		
 		jtxtFries = new JTextField();
+		jtxtFries.setText("0");
 		jtxtFries.setColumns(10);
 		jtxtFries.setBounds(145, 109, 86, 20);
 		panel.add(jtxtFries);
 		
 		jtxtCrispyCorn = new JTextField();
+		jtxtCrispyCorn.setText("0");
 		jtxtCrispyCorn.setColumns(10);
 		jtxtCrispyCorn.setBounds(145, 134, 86, 20);
 		panel.add(jtxtCrispyCorn);
@@ -167,26 +174,31 @@ public class RestaurantMenu {
 		panel.add(lblRotis);
 		
 		jtxtVegRice = new JTextField();
+		jtxtVegRice.setText("0");
 		jtxtVegRice.setBounds(467, 33, 86, 20);
 		panel.add(jtxtVegRice);
 		jtxtVegRice.setColumns(10);
 		
 		jtxtChickenRice = new JTextField();
+		jtxtChickenRice.setText("0");
 		jtxtChickenRice.setColumns(10);
 		jtxtChickenRice.setBounds(467, 58, 86, 20);
 		panel.add(jtxtChickenRice);
 		
 		jtxtVegBiryani = new JTextField();
+		jtxtVegBiryani.setText("0");
 		jtxtVegBiryani.setColumns(10);
 		jtxtVegBiryani.setBounds(467, 83, 86, 20);
 		panel.add(jtxtVegBiryani);
 		
 		jtxtChicBiryani = new JTextField();
+		jtxtChicBiryani.setText("0");
 		jtxtChicBiryani.setColumns(10);
 		jtxtChicBiryani.setBounds(467, 109, 86, 20);
 		panel.add(jtxtChicBiryani);
 		
 		jtxtRotis = new JTextField();
+		jtxtRotis.setText("0");
 		jtxtRotis.setColumns(10);
 		jtxtRotis.setBounds(467, 137, 86, 20);
 		panel.add(jtxtRotis);
@@ -212,26 +224,31 @@ public class RestaurantMenu {
 		panel.add(lblRasgullars);
 		
 		jtxtShakes = new JTextField();
+		jtxtShakes.setText("0");
 		jtxtShakes.setBounds(736, 36, 86, 20);
 		panel.add(jtxtShakes);
 		jtxtShakes.setColumns(10);
 		
 		jtxtIce = new JTextField();
+		jtxtIce.setText("0");
 		jtxtIce.setColumns(10);
 		jtxtIce.setBounds(736, 58, 86, 20);
 		panel.add(jtxtIce);
 		
 		jtxtStone = new JTextField();
+		jtxtStone.setText("0");
 		jtxtStone.setColumns(10);
 		jtxtStone.setBounds(736, 83, 86, 20);
 		panel.add(jtxtStone);
 		
 		jtxtLassi = new JTextField();
+		jtxtLassi.setText("0");
 		jtxtLassi.setColumns(10);
 		jtxtLassi.setBounds(736, 109, 86, 20);
 		panel.add(jtxtLassi);
 		
 		jtxtRasgulla = new JTextField();
+		jtxtRasgulla.setText("0");
 		jtxtRasgulla.setColumns(10);
 		jtxtRasgulla.setBounds(736, 134, 86, 20);
 		panel.add(jtxtRasgulla);
@@ -255,10 +272,23 @@ public class RestaurantMenu {
 		lblChooseADrink.setBounds(206, 222, 123, 14);
 		panel.add(lblChooseADrink);
 		
-		JComboBox comboBox = new JComboBox();
-		comboBox.setModel(new DefaultComboBoxModel(new String[] {"--Select a drink--", "Mocktails", "Cocktails", "Coke", "Thumps up", "Fanta "}));
-		comboBox.setBounds(325, 220, 206, 22);
-		panel.add(comboBox);
+		JComboBox jcmbDrink = new JComboBox();
+		jcmbDrink.setModel(new DefaultComboBoxModel(new String[] {"--Select a drink--", "Mocktails", "Cocktails", "Coke", "Thumpsup", "Fanta "}));
+		jcmbDrink.setBounds(325, 220, 206, 22);
+		panel.add(jcmbDrink);
+		
+		
+		jtxtDrink = new JTextField();
+		jtxtDrink.setText("0");
+		jtxtDrink.setBounds(611, 221, 86, 20);
+		panel.add(jtxtDrink);
+		jtxtDrink.setColumns(10);
+		
+		JLabel lblQty_1 = new JLabel("QTY");
+		lblQty_1.setHorizontalAlignment(SwingConstants.CENTER);
+		lblQty_1.setFont(new Font("Tahoma", Font.BOLD, 11));
+		lblQty_1.setBounds(613, 196, 71, 14);
+		panel.add(lblQty_1);
 		
 	
 		
@@ -399,12 +429,85 @@ public class RestaurantMenu {
 				VRasgulla = (Rasgulla * iRasgulla);
 				String vras = String.format("%.2f", VRasgulla + VLassi + VStone + Vice + VShakes + VRotis + CBiryani + VBiryani + ChickFRice + VegFRice + Corn + Fries + Pas + Kebabs + Wings + 18);
 				jtxtTotal.setText(vras);
+				
+				double Drinks = Double.parseDouble(jtxtDrink.getText());
+				double Mocktails = 140 * Drinks;
+				double Cocktails = 180 * Drinks;
+				double Coke = 50 * Drinks;
+				double ThumpsUp = 50 * Drinks;
+				double Fanta = 40 * Drinks;
+				
+				if (jcmbDrink.getSelectedItem().equals("Mocktails"))
+				{
+					 
+					String cMock = String.format("%.2f", VRasgulla + VLassi + VStone + Vice + VShakes + VRotis + CBiryani + VBiryani + ChickFRice + VegFRice + Corn + Fries + Pas + Kebabs + Wings + Mocktails + 18);
+					jtxtTotal.setText(cMock);
 				}
-		});
+				
+				if (jcmbDrink.getSelectedItem().equals("Cocktails"))
+				{
+					String cCocktail = String.format("%.2f", VRasgulla + VLassi + VStone + Vice + VShakes + VRotis + CBiryani + VBiryani + ChickFRice + VegFRice + Corn + Fries + Pas + Kebabs + Wings + Cocktails + 18);
+					jtxtTotal.setText(cCocktail);
+				}
+				
+				if (jcmbDrink.getSelectedItem().equals("Coke"))
+				{
+					String cCoke = String.format("%.2f", VRasgulla + VLassi + VStone + Vice + VShakes + VRotis + CBiryani + VBiryani + ChickFRice + VegFRice + Corn + Fries + Pas + Kebabs + Wings + Coke + 18);
+					jtxtTotal.setText(cCoke);
+				}
+				
+				if (jcmbDrink.getSelectedItem().equals("ThumpsUp"))
+				{
+					String cThum = String.format("%.2f", VRasgulla + VLassi + VStone + Vice + VShakes + VRotis + CBiryani + VBiryani + ChickFRice + VegFRice + Corn + Fries + Pas + Kebabs + Wings + ThumpsUp + 18);
+					jtxtTotal.setText(cThum);
+			    }
+				
+				if (jcmbDrink.getSelectedItem().equals("Fanta"))
+				{
+					String cFanta = String.format("%.2f", VRasgulla + VLassi + VStone + Vice + VShakes + VRotis + CBiryani + VBiryani + ChickFRice + VegFRice + Corn + Fries + Pas + Kebabs + Wings + Fanta + 18);
+					jtxtTotal.setText(cFanta);
+				}
+				
+				if (jcmbDrink.getSelectedItem().equals("--Select a drink--"))
+				{
+					String cSel = String.format("%.2f", VRasgulla + VLassi + VStone + Vice + VShakes + VRotis + CBiryani + VBiryani + ChickFRice + VegFRice + Corn + Fries + Pas + Kebabs + Wings + 18);
+					jtxtTotal.setText(cSel);
+				}
+			}
+		}
+		);
 		btnNewButton.setBounds(667, 368, 163, 23);
 		frame.getContentPane().add(btnNewButton);
 		
 		JButton btnReset = new JButton("Reset");
+		btnReset.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				
+				jtxtTotal.setText("0");
+				jtxtChickenWings.setText("0");
+				jtxtChickenKebabs.setText("0");
+				jtxtPasta.setText("0");
+				jtxtFries.setText("0");
+				jtxtCrispyCorn.setText("0");
+				jtxtVegRice.setText("0");
+				jtxtChickenRice.setText("0");
+				jtxtVegBiryani.setText("0");
+				jtxtChicBiryani.setText("0");
+				jtxtRotis.setText("0");
+				jtxtShakes.setText("0");
+				jtxtIce.setText("0");
+				jtxtStone.setText("0");
+				jtxtLassi.setText("0");
+				jtxtRasgulla.setText("0");
+				jtxtDrink.setText("0");
+				jcmbDrink.setSelectedItem("--Select a drink--");
+				
+				
+				
+				
+				
+			}
+		});
 		btnReset.setBounds(699, 439, 91, 23);
 		frame.getContentPane().add(btnReset);
 		
@@ -415,11 +518,45 @@ public class RestaurantMenu {
 				System.exit(0);
 			}
 		});
-		btnNewButton_1.setBounds(699, 521, 91, 23);
+		btnNewButton_1.setBounds(699, 489, 91, 23);
 		frame.getContentPane().add(btnNewButton_1);
 		
 		JButton btnNewButton_2 = new JButton("Print");
-		btnNewButton_2.setBounds(699, 604, 91, 23);
+		btnNewButton_2.addActionListener(new ActionListener() {
+			
+
+			public void actionPerformed(ActionEvent e) {
+				
+				double Qty1 = Double.parseDouble(jtxtChickenWings.getText());
+				double Qty2 = Double.parseDouble(jtxtChickenKebabs.getText());
+				double Qty3 = Double.parseDouble(jtxtPasta.getText());
+				double Qty4 = Double.parseDouble(jtxtFries.getText());
+				double Qty5 = Double.parseDouble(jtxtCrispyCorn.getText());
+				double Qty6 = Double.parseDouble(jtxtVegRice.getText());
+				double Qty7 = Double.parseDouble(jtxtChickenRice.getText());
+				double Qty8 = Double.parseDouble(jtxtVegBiryani.getText());
+				double Qty9 = Double.parseDouble(jtxtChicBiryani.getText());
+				double Qty10 = Double.parseDouble(jtxtRotis.getText());
+				double Qty11 = Double.parseDouble(jtxtShakes.getText());
+				double Qty12 = Double.parseDouble(jtxtIce.getText());
+				double Qty13 = Double.parseDouble(jtxtStone.getText());
+				double Qty14 = Double.parseDouble(jtxtLassi.getText());
+				double Qty15 = Double.parseDouble(jtxtRasgulla.getText());
+				double Qty16 = Double.parseDouble(jtxtDrink.getText());
+				
+			    jtxtReceipt.setText("Customer Copy" + "\n Chicken Wings Rs.140:\t\t"
+				+ Qty1 + "\n Chicken Kebabs Rs.180:\t\t" + Qty2 + "\n Pasta Rs.60:\t\t" +
+				Qty3 + "\n French Fries Rs.60:\t\t" + Qty4 + "\n Crispy Corn Rs.80:\t\t" + 		
+				Qty5 + "\nVeg Fried Rice Rs.110:\t\t" + Qty6 + "\nChicken Fried Rice Rs.120:\t\t" + 
+				Qty7 + "\nVeg Biryani Rs.120:\t\t" + Qty8 + "\nChicken Biryani Rs.180\t\t" + 
+				Qty9 + "\nRotis Rs.6:\t\t" + Qty10 + "\nMilkShakes Rs.160:\t\t" + 
+				Qty11 + "\nIce Cream Rs.150:\t\t" + Qty12 + "\nStone Concepts Rs.360:\t\t" + 
+				Qty13 + "\nLassi Rs.60:\t\t" + Qty14 +"\nRasgulla Rs.120:\t\t" + Qty15 +
+				"\nDrinks" + Qty16);
+		
+				}
+		});
+		btnNewButton_2.setBounds(699, 539, 91, 23);
 		frame.getContentPane().add(btnNewButton_2);
 		
 		JPanel panel_2 = new JPanel();
@@ -427,10 +564,19 @@ public class RestaurantMenu {
 		frame.getContentPane().add(panel_2);
 		panel_2.setLayout(null);
 		
-		textField_17 = new JTextField();
-		textField_17.setBounds(10, 11, 427, 575);
-		panel_2.add(textField_17);
-		textField_17.setColumns(10);
+		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
+		tabbedPane.setBounds(10, 11, 427, 575);
+		panel_2.add(tabbedPane);
+		
+		JPanel jpanelReceipt = new JPanel();
+		jpanelReceipt.setBackground(Color.WHITE);
+		tabbedPane.addTab("Receipt", null, jpanelReceipt, null);
+		jpanelReceipt.setLayout(null);
+		
+		jtxtReceipt = new JTextField();
+		jtxtReceipt.setBounds(0, 0, 422, 550);
+		jpanelReceipt.add(jtxtReceipt);
+		jtxtReceipt.setColumns(10);
 		
 		JLabel lblReceipt = new JLabel("Receipt: ");
 		lblReceipt.setFont(new Font("Tahoma", Font.BOLD, 16));
@@ -441,6 +587,10 @@ public class RestaurantMenu {
 		jtxtTotal.setBounds(659, 402, 183, 20);
 		frame.getContentPane().add(jtxtTotal);
 		jtxtTotal.setColumns(10);
+		
+		JButton btnFeedback = new JButton("Feedback");
+		btnFeedback.setBounds(699, 590, 91, 23);
+		frame.getContentPane().add(btnFeedback);
 		frame.setBounds(0, 0, 1368, 689);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}

@@ -4,6 +4,7 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 
+import Allotmentbuff_m.AllotmentBuffet;
 import allotment_m.Allotment;
 
 import javax.swing.JButton;
@@ -61,10 +62,10 @@ public class Dinein {
 		
 		JButton btnBuffet = new JButton("Buffet");
 		btnBuffet.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
+			public void actionPerformed(ActionEvent e) {
 				
-				Allotment info = new Allotment();
-				Allotment.main(null);
+				AllotmentBuffet info = new AllotmentBuffet();
+				AllotmentBuffet.main(null);
 			}
 		});
 		btnBuffet.setFont(new Font("Tahoma", Font.PLAIN, 22));

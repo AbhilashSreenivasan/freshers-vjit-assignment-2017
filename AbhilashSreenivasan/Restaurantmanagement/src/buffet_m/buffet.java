@@ -11,11 +11,19 @@ import javax.swing.JSeparator;
 import javax.swing.JComboBox;
 import javax.swing.JButton;
 import javax.swing.JPanel;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.SwingConstants;
 
 public class buffet {
 
 	private JFrame frame;
 	private JTextField textField_1;
+	private JTextField jtxtVeg;
+	private JTextField jtxtNonveg;
+	private JTextField jtxtTotal2;
+	private JTextField jtxtDrink2;
 
 	/**
 	 * Launch the application.
@@ -184,20 +192,81 @@ public class buffet {
 		lblAddOns.setBounds(113, 610, 106, 14);
 		frame.getContentPane().add(lblAddOns);
 		
-		JComboBox comboBox = new JComboBox();
-		comboBox.setBounds(176, 606, 256, 22);
-		frame.getContentPane().add(comboBox);
-		
-		JButton btnNewButton = new JButton("Veg (  Rs. 400 )");
-		btnNewButton.setBounds(10, 40, 152, 46);
-		frame.getContentPane().add(btnNewButton);
-		
-		JButton btnNonvegRs = new JButton("Non-Veg (  Rs. 699 )");
-		btnNonvegRs.setBounds(337, 40, 152, 46);
-		frame.getContentPane().add(btnNonvegRs);
+		JComboBox jcmbDrink2 = new JComboBox();
+		jcmbDrink2.setModel(new DefaultComboBoxModel(new String[] {"--Select Drink--", "Mocktails", "Cocktails", "Coke", "ThumpsUp", "Fanta"}));
+		jcmbDrink2.setBounds(176, 606, 256, 22);
+		frame.getContentPane().add(jcmbDrink2);
 		
 		JButton btnNewButton_1 = new JButton("TOTAL");
-		btnNewButton_1.setBounds(620, 216, 91, 23);
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				double VegBuffet = Double.parseDouble(jtxtVeg.getText());
+				double ivegbuf = 499;
+				double Veg;
+				
+				Veg = (VegBuffet * ivegbuf);
+				String cveg = String.format("%.2f", Veg );
+				jtxtTotal2.setText(cveg);
+				
+				
+				double ChicBuffet = Double.parseDouble(jtxtNonveg.getText());
+				double ichicbuf = 699;
+				double Chic;
+				
+				Chic = (ChicBuffet * ichicbuf);
+				String cnon = String.format("%.2f",Chic + Veg );
+				jtxtTotal2.setText(cnon);
+				
+				double Drinks = Double.parseDouble(jtxtDrink2.getText());
+				double Mocktails = 140 * Drinks;
+				double Cocktails = 180 * Drinks;
+				double Coke = 50 * Drinks;
+				double ThumpsUp = 50 * Drinks;
+				double Fanta = 40 * Drinks;
+				
+				if (jcmbDrink2.getSelectedItem().equals("Mocktails"))
+				{
+					String cMock2 = String.format("%.2f", Chic + Veg + Mocktails);
+					jtxtTotal2.setText(cMock2);
+					
+				}
+				
+				if (jcmbDrink2.getSelectedItem().equals("Cocktails"))
+				{
+					String cCock2 = String.format("%.2f", Chic + Veg + Cocktails);
+				    jtxtTotal2.setText(cCock2);
+				}	
+				
+				if (jcmbDrink2.getSelectedItem().equals("Coke"))
+				{
+					String cCoke = String.format("%.2f", Chic + Veg + Coke);
+				    jtxtTotal2.setText(cCoke);
+				}
+				
+				if (jcmbDrink2.getSelectedItem().equals("ThumpsUp"))
+				{
+					String cThumpsUp = String.format("%.2f", Chic + Veg + ThumpsUp);
+				    jtxtTotal2.setText(cThumpsUp);
+				}
+				
+				if(jcmbDrink2.getSelectedItem().equals("Fanta"))
+				{
+					String cFanta = String.format("%.2f", Chic + Veg + Fanta);
+				    jtxtTotal2.setText(cFanta);
+				}
+				
+				if (jcmbDrink2.getSelectedItem().equals("--Select a drink--"))
+				{
+					String cSel = String.format("%.2f", Chic + Veg);
+				    jtxtTotal2.setText(cSel);
+				}
+				
+				
+				
+			}
+		});
+		btnNewButton_1.setBounds(620, 188, 91, 23);
 		frame.getContentPane().add(btnNewButton_1);
 		
 		JButton btnReceipt = new JButton("RECEIPT");
@@ -222,6 +291,55 @@ public class buffet {
 		lblReceipt.setFont(new Font("Tahoma", Font.BOLD, 15));
 		lblReceipt.setBounds(909, 18, 107, 14);
 		frame.getContentPane().add(lblReceipt);
+		
+		JButton btnNewButton_2 = new JButton("EXIT");
+		btnNewButton_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				System.exit(0);
+			}
+		});
+		btnNewButton_2.setBounds(620, 360, 91, 23);
+		frame.getContentPane().add(btnNewButton_2);
+		
+		JLabel lblVegetarian = new JLabel("Vegetarian ( Rs.499)");
+		lblVegetarian.setFont(new Font("Tahoma", Font.BOLD, 11));
+		lblVegetarian.setBounds(10, 51, 144, 14);
+		frame.getContentPane().add(lblVegetarian);
+		
+		jtxtVeg = new JTextField();
+		jtxtVeg.setText("0");
+		jtxtVeg.setBounds(153, 48, 86, 20);
+		frame.getContentPane().add(jtxtVeg);
+		jtxtVeg.setColumns(10);
+		
+		JLabel lblNonVegetarian = new JLabel("Non Vegetarian (Rs.699)");
+		lblNonVegetarian.setFont(new Font("Tahoma", Font.BOLD, 11));
+		lblNonVegetarian.setBounds(290, 51, 179, 14);
+		frame.getContentPane().add(lblNonVegetarian);
+		
+		jtxtNonveg = new JTextField();
+		jtxtNonveg.setText("0");
+		jtxtNonveg.setBounds(479, 48, 86, 20);
+		frame.getContentPane().add(jtxtNonveg);
+		jtxtNonveg.setColumns(10);
+		
+		jtxtTotal2 = new JTextField();
+		jtxtTotal2.setBounds(625, 222, 86, 20);
+		frame.getContentPane().add(jtxtTotal2);
+		jtxtTotal2.setColumns(10);
+		
+		jtxtDrink2 = new JTextField();
+		jtxtDrink2.setText("0");
+		jtxtDrink2.setBounds(479, 607, 86, 20);
+		frame.getContentPane().add(jtxtDrink2);
+		jtxtDrink2.setColumns(10);
+		
+		JLabel lblQty = new JLabel("QTY");
+		lblQty.setFont(new Font("Tahoma", Font.BOLD, 11));
+		lblQty.setHorizontalAlignment(SwingConstants.CENTER);
+		lblQty.setBounds(496, 582, 46, 14);
+		frame.getContentPane().add(lblQty);
 	}
 
 }
