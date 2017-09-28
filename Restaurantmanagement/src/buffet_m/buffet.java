@@ -19,11 +19,14 @@ import javax.swing.SwingConstants;
 public class buffet {
 
 	private JFrame frame;
-	private JTextField textField_1;
 	private JTextField jtxtVeg;
 	private JTextField jtxtNonveg;
 	private JTextField jtxtTotal2;
 	private JTextField jtxtDrink2;
+	private JTextField jtxtBufVeg;
+	private JTextField jtxtBufChic;
+	private JTextField jtxtBufDrink;
+	private JTextField jtxtBufTotal;
 
 	/**
 	 * Launch the application.
@@ -269,12 +272,84 @@ public class buffet {
 		btnNewButton_1.setBounds(620, 188, 91, 23);
 		frame.getContentPane().add(btnNewButton_1);
 		
-		JButton btnReceipt = new JButton("RECEIPT");
-		btnReceipt.setBounds(620, 264, 91, 23);
-		frame.getContentPane().add(btnReceipt);
-		
 		JButton btnPrint = new JButton("PRINT");
-		btnPrint.setBounds(620, 314, 91, 23);
+		btnPrint.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			
+				double VegBuffe = Double.parseDouble(jtxtVeg.getText());
+				double ivegbu = 499;
+				double Ve;
+				
+				Ve = (VegBuffe * ivegbu);
+				String cve = String.format("%.2f", Ve);
+				jtxtBufVeg.setText(cve);
+				
+				
+				double ChicBuffe = Double.parseDouble(jtxtNonveg.getText());
+				double ichicbu = 699;
+				double Chi;
+				
+				Chi = (ChicBuffe * ichicbu);
+				String cno = String.format("%.2f",Chi);
+				jtxtBufChic.setText(cno);
+				
+				double tots2 = Double.parseDouble(jtxtTotal2.getText());
+				double itots2 = 1;
+				double t;
+				
+				t = (tots2 * itots2);
+				String tt = String.format("%.2f",tots2);
+				jtxtBufTotal.setText(tt);
+				
+				
+				
+				double Drink = Double.parseDouble(jtxtDrink2.getText());
+				double Mocktail = 140 * Drink;
+				double Cocktail = 180 * Drink;
+				double Cok = 50 * Drink;
+				double ThumpsU = 50 * Drink;
+				double Fant = 40 * Drink;
+				
+				if (jcmbDrink2.getSelectedItem().equals("Mocktails"))
+				{
+					String cMock3 = String.format("%.2f",Mocktail);
+					jtxtBufDrink.setText(cMock3);
+					
+				}
+				
+				if (jcmbDrink2.getSelectedItem().equals("Cocktails"))
+				{
+					String cCock3 = String.format("%.2f",Cocktail);
+				    jtxtBufDrink.setText(cCock3);
+				}	
+				
+				if (jcmbDrink2.getSelectedItem().equals("Coke"))
+				{
+					String cCok3 = String.format("%.2f",Cok);
+				    jtxtBufDrink.setText(cCok3);
+				}
+				
+				if (jcmbDrink2.getSelectedItem().equals("ThumpsUp"))
+				{
+					String cThumpsU = String.format("%.2f",ThumpsU);
+				    jtxtBufDrink.setText(cThumpsU);
+				}
+				
+				if(jcmbDrink2.getSelectedItem().equals("Fanta"))
+				{
+					String cFant = String.format("%.2f",Fant);
+				    jtxtBufDrink.setText(cFant);
+				}
+				
+				if (jcmbDrink2.getSelectedItem().equals("--Select a drink--"))
+				{
+					String cSe3 = String.format("%.2f", Fant);
+				    jtxtBufDrink.setText("0");
+				}
+				
+				}
+		});
+		btnPrint.setBounds(620, 264, 91, 23);
 		frame.getContentPane().add(btnPrint);
 		
 		JPanel panel = new JPanel();
@@ -282,10 +357,67 @@ public class buffet {
 		frame.getContentPane().add(panel);
 		panel.setLayout(null);
 		
-		textField_1 = new JTextField();
-		textField_1.setBounds(10, 11, 421, 562);
-		panel.add(textField_1);
-		textField_1.setColumns(10);
+		JPanel panel_1 = new JPanel();
+		panel_1.setBackground(Color.WHITE);
+		panel_1.setBounds(10, 11, 421, 562);
+		panel.add(panel_1);
+		panel_1.setLayout(null);
+		
+		JLabel lblVegetarianBuffet = new JLabel("Vegetarian Buffet");
+		lblVegetarianBuffet.setBounds(44, 102, 102, 14);
+		panel_1.add(lblVegetarianBuffet);
+		
+		JLabel lblCustomerCopy = new JLabel("CUSTOMER COPY");
+		lblCustomerCopy.setFont(new Font("Tahoma", Font.BOLD, 11));
+		lblCustomerCopy.setBounds(167, 11, 131, 14);
+		panel_1.add(lblCustomerCopy);
+		
+		JLabel lblNonVegetarianBuffet = new JLabel("Non Vegetarian Buffet");
+		lblNonVegetarianBuffet.setBounds(36, 138, 163, 14);
+		panel_1.add(lblNonVegetarianBuffet);
+		
+		JLabel lblItem = new JLabel("ITEM");
+		lblItem.setFont(new Font("Tahoma", Font.BOLD, 11));
+		lblItem.setHorizontalAlignment(SwingConstants.CENTER);
+		lblItem.setBounds(58, 54, 46, 14);
+		panel_1.add(lblItem);
+		
+		JLabel lblPrice = new JLabel("PRICE");
+		lblPrice.setFont(new Font("Tahoma", Font.BOLD, 11));
+		lblPrice.setHorizontalAlignment(SwingConstants.CENTER);
+		lblPrice.setBounds(315, 54, 46, 14);
+		panel_1.add(lblPrice);
+		
+		jtxtBufVeg = new JTextField();
+		jtxtBufVeg.setBounds(296, 99, 86, 20);
+		panel_1.add(jtxtBufVeg);
+		jtxtBufVeg.setColumns(10);
+		
+		jtxtBufChic = new JTextField();
+		jtxtBufChic.setBounds(296, 135, 86, 20);
+		panel_1.add(jtxtBufChic);
+		jtxtBufChic.setColumns(10);
+		
+		JLabel lblTotal = new JLabel("TOTAL");
+		lblTotal.setFont(new Font("Tahoma", Font.BOLD, 11));
+		lblTotal.setBounds(58, 272, 88, 14);
+		panel_1.add(lblTotal);
+		
+		JLabel lblDrink = new JLabel("Drink");
+		lblDrink.setBounds(58, 183, 46, 14);
+		panel_1.add(lblDrink);
+		
+		jtxtBufDrink = new JTextField();
+		jtxtBufDrink.setBounds(296, 180, 86, 20);
+		panel_1.add(jtxtBufDrink);
+		jtxtBufDrink.setColumns(10);
+		
+		jtxtBufTotal = new JTextField();
+		jtxtBufTotal.setFont(new Font("Tahoma", Font.BOLD, 13));
+		jtxtBufTotal.setText("");
+		jtxtBufTotal.setBounds(259, 269, 152, 20);
+		panel_1.add(jtxtBufTotal);
+		jtxtBufTotal.setColumns(10);
 		
 		JLabel lblReceipt = new JLabel("Receipt:");
 		lblReceipt.setFont(new Font("Tahoma", Font.BOLD, 15));
@@ -340,6 +472,22 @@ public class buffet {
 		lblQty.setHorizontalAlignment(SwingConstants.CENTER);
 		lblQty.setBounds(496, 582, 46, 14);
 		frame.getContentPane().add(lblQty);
+		
+		JButton btnReset = new JButton("Reset");
+		btnReset.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			
+			jtxtVeg.setText("0");
+			jtxtNonveg.setText("0");
+			jtxtBufVeg.setText("0");
+			jtxtBufChic.setText("0");
+			jtxtTotal2.setText("0");
+			jtxtBufTotal.setText("0");
+			jtxtDrink2.setText("0");
+			jtxtBufDrink.setText("0");
+			}
+		});
+		btnReset.setBounds(620, 310, 91, 23);
+		frame.getContentPane().add(btnReset);
 	}
-
 }
