@@ -1,0 +1,44 @@
+			RESTAURANT MANAGMENT SYSTEM
+
+
+1. The First Application window contains two functional buttons named : Dine in and Home delivery.
+
+2. Upon selection the dine in option, the control is given to the next applciation window
+	consisting of two other functional butttons named: La Carte and BUffet. Selection
+	of the respective buttons by the user would display their respective menus.
+
+3. The La Carte Menu has been divided into 3 coloumns named :Starters, Main Course, Desserts.
+	Each of them contain a list of 5 dishes with their respective prices being displayed.
+	A quantity text field has been provided adjacent to every dish for the selection
+	by the user.
+
+4. A drop down box containing options of five drinks and a quantity box for the user is placed below
+	the first 3 coloumns of dishes.
+
+5. Upon selection of the dishes, on clicking the Total button, the total amount is displayed.
+	Along with this, a list for the Executive chef is produced for the dishes with the
+	respective quantity required. This can be used by the executive chef for preparing
+	the dishes by the line chefs present.
+
+6. Under the Total button, "Reset" button is used for turning all the textfields to 0 and 
+	start afresh. The "Print" button reads the values of the customer's order and sets
+	the receipt text fields with individual prices of the ordered dishes and the total
+	is displayed for the user. The "Exit" function is used to exit the Restaurant
+	Management Application.
+
+7. Similar functional buttons have been executed for the Buffet option where the menu is
+	divided into "Veg" and "Non veg" buffet systems with their respective dishes 
+	displayed under each. Add-ons of drinks can be given by the customer to the choice
+	of buffet. It contains the similar functions of Total, Reset, Print and Exit.
+
+8. The Home delivery button consists of the same menu as displayed for the La Carte 
+	application window but the change is that, the executive chef field is replaced
+	with the Home Address field given by the customer.
+
+9. The receipt option consists of the combined prices for starters, Main course and 
+	Desserts along with the Delivery Address displayed for the verification by the
+	delivery executive for the proper delivery to the customer.
+
+
+
+  
